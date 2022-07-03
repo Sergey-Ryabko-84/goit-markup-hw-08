@@ -1,0 +1,9 @@
+@mixin transition($tp, $td: 250ms, $ttf: var(--timing-function)) {
+    transition: $tp $td $ttf;
+}
+
+// @mixin transition($tp, $td: 250ms, $ttf: var(--timing-function)) {
+//     transition-property: $tp;
+//     transition-duration: $td;
+//     transition-timing-function: $ttf;
+// }
