@@ -7,6 +7,10 @@ body {
   background-color: var(--primary-bg-color);
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .list {
   margin: 0;
   padding: 0;

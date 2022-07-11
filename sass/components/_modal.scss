@@ -19,11 +19,10 @@
 
 .modal {
   position: absolute;
-  top: 50%;
+  top: calc(100% * 0.117);
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-  width: 528px;
-  min-height: 581px;
+  transform: translateX(-50%) scale(1);
+  width: calc(100% - 30px);
   opacity: 1;
   padding: 40px;
 
@@ -39,6 +38,19 @@
   .backdrop.is-hidden &{
     transform: translate(-50%, -50%) scale(.5);
     opacity: 0;
+  }
+
+  @media screen and (min-width: 480px) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 450px;
+    min-height: 609px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    min-height: 581px;
   }
 }
 
@@ -80,8 +92,11 @@
   &:nth-last-child(2) {
     margin-top: 20px;
     margin-bottom: 30px;
-    padding-left: 12px;
-    padding-right: 8px;
+
+    @media screen and (min-width: 1200px) {
+      padding-left: 12px;
+      padding-right: 8px;    
+    }
   }
 }
 
@@ -196,7 +211,8 @@
   display: flex;
   align-items: center;
 
-  line-height: 1.71px;
+  font-size: 12px;
+  line-height: 1.17;
   color: var(--secondary-text-color);
 
   @include transition(text-shadow);
@@ -204,6 +220,18 @@
   .form__checkbox:checked + &,
   .form__checkbox:focus + & {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+}
+
+.form__checkbox-lable--box {
+  @media screen and (min-width: 480px) {
+    display: flex;
+    align-items: center;
   }
 }
 
